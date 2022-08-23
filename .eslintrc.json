@@ -16,7 +16,7 @@
     },
     "babelOptions": {
       "presets": ["@babel/preset-react"]
-   },
+   }
   },
   "env": {
     "browser": true,
