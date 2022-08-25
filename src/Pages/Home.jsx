@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import YoutubeEmbed from '../Components/YoutubeEmbed';
-import JavaNovaSiteVideo from '../Assets/JavaNovaSiteVideo.mov';
 import Video from '../Sections/Video';
 
 const HomeContainer = styled.div`

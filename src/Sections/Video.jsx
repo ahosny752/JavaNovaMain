@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import JavaNovaSiteVideo from '../Assets/JavaNovaSiteVideo.mov';
 import StyledButton from '../Components/StyledButton';
 
 const VideoContainer = styled.div`
@@ -48,8 +47,11 @@ function Video() {
             <HowItWorks>
                 <StyledButton buttonText="Learn More" iconName="arrow right" color="black" />
             </HowItWorks>
-            <StyledVideo autoPlay muted loop id="myVideo">
-                <source src={JavaNovaSiteVideo} type="video/mp4" />
+            <StyledVideo playsInline autoPlay muted loop id="myVideo">
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/Java%20Nova%20site%20vid%20-%204K%20-%204K.mov?alt=media&token=bbd70532-a447-4747-b76c-4af1c360e84a"
+                    type="video/mp4"
+                />
             </StyledVideo>
         </VideoContainer>
     );
