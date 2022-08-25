@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import propTypes from 'prop-types';
 import useWindowSize from '../Hooks/useWindowSize';
 import JavaNovaLogo from '../Assets/JavaNovaLogoWhite.png';
+import NavbarModal from './NavbarModal';
+import CartModal from './CartModal';
 
 const NavbarContainer = styled.div`
+    position: sticky;
     height: 90px;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-weight: bold;
 `;
 
 const NavBox = styled.div`
@@ -54,6 +58,7 @@ const MenuItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
 `;
 
 const LogoItem = styled.img`
@@ -107,7 +112,10 @@ const StyledLink = styled(Link)`
     }
 `;
 
-function Navbar() {
+function Navbar(props) {
+    const { showSidebar, setShowSidebar } = props;
+    const [modalOpen, setModalOpen] = useState(false);
+
     const windowSize = useWindowSize();
     const collapseMenu = windowSize.width < 1265;
     let collapseMenuWith;
@@ -127,7 +135,7 @@ function Navbar() {
             <NavBox style={{ justifyContent: justifyNavBox }}>
                 {collapseMenu ? (
                     <Hamburger>
-                        <HamburgerItem>
+                        <HamburgerItem onClick={() => setModalOpen(true)}>
                             <GiHamburgerMenu style={iconStyle} />
                         </HamburgerItem>
                     </Hamburger>
@@ -148,13 +156,19 @@ function Navbar() {
                     </StyledLink>
                 </Logo>
                 <Cart style={{ width: collapseMenuWith }}>
-                    <CartItem>
+                    <CartItem onClick={() => setShowSidebar(true)}>
                         <RiShoppingCartLine style={iconStyle} />
                     </CartItem>
                 </Cart>
             </NavBox>
+            <NavbarModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
         </NavbarContainer>
     );
 }
+
+Navbar.propTypes = {
+    showSidebar: propTypes.bool,
+    setShowSidebar: propTypes.func,
+};
 
 export default Navbar;
