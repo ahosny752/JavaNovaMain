@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 import YoutubeEmbed from '../Components/YoutubeEmbed';
 import Video from '../Sections/Video';
+import HowItWorks from '../Sections/HowItWorks';
+import Section1 from '../Sections/Section1';
 
 const HomeContainer = styled.div`
     height: 100%;
     overflow-y: auto;
-    /* display: flex;
-    flex-direction: column; */
 `;
 
 const Section = styled.div`
@@ -21,12 +21,22 @@ const Section = styled.div`
 `;
 
 function Home() {
+    const howItWorksRef = useRef(null);
+
+    const scrollToHowItWorks = () => {
+        howItWorksRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
     return (
         <HomeContainer>
-            <Video />
-            <Section>sec 1</Section>
-            <Section style={{ backgroundColor: 'black', height: '300px' }}>sec 1</Section>
-            <Section>sec 1</Section>
+            <Video scrollToHowItWorks={scrollToHowItWorks} />
+            <Section>
+                <Section1 />
+            </Section>
+            <Section ref={howItWorksRef} style={{ backgroundColor: 'black', height: 'auto' }}>
+                <HowItWorks />
+            </Section>
+            <Section>section2</Section>
         </HomeContainer>
     );
 }

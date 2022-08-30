@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 import StyledButton from '../Components/StyledButton';
 
 const VideoContainer = styled.div`
@@ -39,17 +40,30 @@ const HowItWorks = styled(CoffeeRedesigned)`
     top: 45%;
 `;
 
-function Video() {
+function Video(props) {
+    const { scrollToHowItWorks } = props;
     return (
         <VideoContainer>
             <CoffeeRedesigned>Coffee Redesigned.</CoffeeRedesigned>
             <TheBestCoffee>The Best Coffee You've Never Had.</TheBestCoffee>
             <HowItWorks>
-                <StyledButton buttonText="Learn More" iconName="arrow right" color="black" />
+                <StyledButton
+                    type="button"
+                    onClick={scrollToHowItWorks}
+                    buttonText="Learn More"
+                    iconName="arrow right"
+                    color="black"
+                />
             </HowItWorks>
-            <StyledVideo playsInline autoPlay muted loop id="myVideo">
+            <StyledVideo
+                playsInline
+                autoPlay
+                muted
+                loop
+                poster="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/Screen%20Shot%202022-08-27%20at%203.20.38%20AM.png?alt=media&token=c174cc0c-6158-4e63-b173-89f1ea2181b6"
+            >
                 <source
-                    src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/Java%20Nova%20site%20vid%20-%204K%20-%204K.mov?alt=media&token=bbd70532-a447-4747-b76c-4af1c360e84a"
+                    src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/Java%20Nova%20site%20vid%20-%204K%20-%204K%20(1).mp4?alt=media&token=eb639a85-b11a-47d7-87ec-bab84c267c9d"
                     type="video/mp4"
                 />
             </StyledVideo>
@@ -57,4 +71,7 @@ function Video() {
     );
 }
 
+Video.propTypes = {
+    scrollToHowItWorks: propTypes.func,
+};
 export default Video;
