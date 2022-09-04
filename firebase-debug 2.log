@@ -1,0 +1,147 @@
+[debug] [2022-08-25T06:30:44.859Z] ----------------------------------------------------------------------
+[debug] [2022-08-25T06:30:44.861Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-08-25T06:30:44.861Z] CLI Version:   11.8.0
+[debug] [2022-08-25T06:30:44.861Z] Platform:      darwin
+[debug] [2022-08-25T06:30:44.861Z] Node Version:  v16.13.0
+[debug] [2022-08-25T06:30:44.862Z] Time:          Thu Aug 25 2022 02:30:44 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-08-25T06:30:44.862Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-25T06:30:44.909Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-25T06:30:44.909Z] > authorizing via signed-in user (ajhosny@gmail.com)
+[debug] [2022-08-25T06:30:44.909Z] [iam] checking project javanovamain for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-25T06:30:44.910Z] > refreshing access token with scopes: []
+[debug] [2022-08-25T06:30:44.912Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-25T06:30:44.912Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-25T06:30:45.078Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-25T06:30:45.078Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-25T06:30:45.123Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/javanovamain:testIamPermissions [none]
+[debug] [2022-08-25T06:30:45.124Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/javanovamain:testIamPermissions x-goog-quota-user=projects/javanovamain
+[debug] [2022-08-25T06:30:45.124Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/javanovamain:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-25T06:30:45.280Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/javanovamain:testIamPermissions 200
+[debug] [2022-08-25T06:30:45.280Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/javanovamain:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-25T06:30:45.281Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/javanovamain/serviceAccounts/javanovamain@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-08-25T06:30:45.281Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/javanovamain/serviceAccounts/javanovamain@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-25T06:30:45.440Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/javanovamain/serviceAccounts/javanovamain@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-08-25T06:30:45.440Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/javanovamain/serviceAccounts/javanovamain@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-08-25T06:30:45.440Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain [none]
+[debug] [2022-08-25T06:30:45.755Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain 200
+[debug] [2022-08-25T06:30:45.755Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain {"projectId":"javanovamain","projectNumber":"151562966884","displayName":"JavaNovaMain","name":"projects/javanovamain","resources":{"hostingSite":"javanovamain","storageBucket":"javanovamain.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6567c6cd-4387-4e74-9378-c13f8b60d07c"}
+[info] 
+[info] === Deploying to 'javanovamain'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-08-25T06:30:46.879Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/javanovamain:test [none]
+[debug] [2022-08-25T06:30:46.879Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/javanovamain:test [omitted]
+[debug] [2022-08-25T06:30:47.151Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/javanovamain:test 200
+[debug] [2022-08-25T06:30:47.152Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/javanovamain:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2022-08-25T06:30:47.153Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain [none]
+[debug] [2022-08-25T06:30:47.402Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain 200
+[debug] [2022-08-25T06:30:47.402Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain {"projectId":"javanovamain","projectNumber":"151562966884","displayName":"JavaNovaMain","name":"projects/javanovamain","resources":{"hostingSite":"javanovamain","storageBucket":"javanovamain.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6567c6cd-4387-4e74-9378-c13f8b60d07c"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2022-08-25T06:30:47.403Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-08-25T06:30:47.404Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-08-25T06:30:47.405Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudbuild.googleapis.com [none]
+[debug] [2022-08-25T06:30:47.406Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/artifactregistry.googleapis.com [none]
+[debug] [2022-08-25T06:30:47.759Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/runtimeconfig.googleapis.com 200
+[debug] [2022-08-25T06:30:47.759Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-08-25T06:30:47.765Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudbuild.googleapis.com 200
+[debug] [2022-08-25T06:30:47.765Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-08-25T06:30:47.771Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/artifactregistry.googleapis.com 200
+[debug] [2022-08-25T06:30:47.771Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2022-08-25T06:30:47.772Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudfunctions.googleapis.com 200
+[debug] [2022-08-25T06:30:47.772Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/javanovamain/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-08-25T06:30:47.773Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain/adminSdkConfig [none]
+[debug] [2022-08-25T06:30:48.189Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain/adminSdkConfig 200
+[debug] [2022-08-25T06:30:48.189Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain/adminSdkConfig {"projectId":"javanovamain","storageBucket":"javanovamain.appspot.com","locationId":"us-central"}
+[debug] [2022-08-25T06:30:48.189Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/javanovamain/configs [none]
+[debug] [2022-08-25T06:30:48.416Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/javanovamain/configs 200
+[debug] [2022-08-25T06:30:48.416Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/javanovamain/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-08-25T06:30:48.418Z] Validating nodejs source
+[debug] [2022-08-25T06:30:49.669Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-25T06:30:49.669Z] Building nodejs source
+[debug] [2022-08-25T06:30:49.671Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-25T06:30:49.849Z] Serving at port 9005
+
+[debug] [2022-08-25T06:30:49.948Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-25T06:30:49.953Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/ahmedhosny/Desktop/Development/JavaNovaMain/functions (79.08 KB) for uploading 
+[debug] [2022-08-25T06:30:50.013Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/-/functions [none]
+[debug] [2022-08-25T06:30:50.604Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/-/functions 200
+[debug] [2022-08-25T06:30:50.604Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/-/functions {"functions":[{"name":"projects/javanovamain/locations/us-central1/functions/api","httpsTrigger":{"url":"https://us-central1-javanovamain.cloudfunctions.net/api","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"api","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"javanovamain@appspot.gserviceaccount.com","updateTime":"2022-08-24T09:10:18.478Z","versionId":"4","labels":{"deployment-tool":"cli-firebase"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/f8f0965f-611a-410c-bae7-9cc775546e9f.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"javanovamain\",\"storageBucket\":\"javanovamain.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"javanovamain"},"runtime":"nodejs16","ingressSettings":"ALLOW_ALL","buildId":"0d153398-f272-448e-ba88-b3edc7dfb3de","buildName":"projects/151562966884/locations/us-central1/builds/0d153398-f272-448e-ba88-b3edc7dfb3de","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2022-08-25T06:30:50.605Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/javanovamain/locations/-/functions [none]
+[debug] [2022-08-25T06:30:51.266Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/javanovamain/locations/-/functions 200
+[debug] [2022-08-25T06:30:51.266Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/javanovamain/locations/-/functions {}
+[debug] [2022-08-25T06:30:51.270Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain [none]
+[debug] [2022-08-25T06:30:51.541Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain 200
+[debug] [2022-08-25T06:30:51.541Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/javanovamain {"projectId":"javanovamain","projectNumber":"151562966884","displayName":"JavaNovaMain","name":"projects/javanovamain","resources":{"hostingSite":"javanovamain","storageBucket":"javanovamain.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6567c6cd-4387-4e74-9378-c13f8b60d07c"}
+[debug] [2022-08-25T06:30:51.543Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/151562966884/sites/javanovamain/versions [none]
+[debug] [2022-08-25T06:30:51.543Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/151562966884/sites/javanovamain/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-25T06:30:52.292Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/151562966884/sites/javanovamain/versions 200
+[debug] [2022-08-25T06:30:52.292Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/151562966884/sites/javanovamain/versions {"name":"projects/151562966884/sites/javanovamain/versions/4f84a2d37a308374","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-25T06:30:52.294Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/releases pageSize=10&pageToken=
+[debug] [2022-08-25T06:30:52.295Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2022-08-25T06:30:52.550Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/releases 200
+[debug] [2022-08-25T06:30:52.550Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/releases {"releases":[{"name":"projects/javanovamain/releases/cloud.firestore","rulesetName":"projects/javanovamain/rulesets/cf54a4b0-10da-4d0a-bff4-8aad9f6db29b","createTime":"2022-08-23T08:56:30.435430Z","updateTime":"2022-08-24T09:09:00.775506Z"}]}
+[debug] [2022-08-25T06:30:52.551Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/rulesets/cf54a4b0-10da-4d0a-bff4-8aad9f6db29b [none]
+[debug] [2022-08-25T06:30:52.659Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2022-08-25T06:30:52.659Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2022-08-25T06:30:52.659Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false [none]
+[debug] [2022-08-25T06:30:52.785Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/rulesets/cf54a4b0-10da-4d0a-bff4-8aad9f6db29b 200
+[debug] [2022-08-25T06:30:52.785Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/javanovamain/rulesets/cf54a4b0-10da-4d0a-bff4-8aad9f6db29b [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2022-08-25T06:30:52.999Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false 200
+[debug] [2022-08-25T06:30:52.999Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/javanovamain/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false {"fields":[{"name":"projects/javanovamain/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully 
+[debug] [2022-08-25T06:30:53.000Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-08-25T06:30:53.000Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-08-25T06:30:53.607Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-08-25T06:30:53.607Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/javanovamain/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/fcc6c23b-aa37-45e9-aa5c-57604f902ae2.zip?GoogleAccessId=service-151562966884@gcf-admin-robot.iam.gserviceaccount.com&Expires=1661410853&Signature=kszC3pj9mFlThbmVzzR8xAgltLrolk6RKGQC%2F30oE8EIc5P5BsB%2FdOwjSMae6JC2p%2Be5O301R8W%2FvprG4G1DR0BDgPCKfQAWPj66tH6y0YghjeGq1h2AtQ3QUdO1iUaTrgtZy6mHFcJhFVBlQfjagx%2BxDuCnv0Z0fCnA5iC3%2B1YlRFVfCl0j3OzDjWFGLXP8urNjbTEx1QxeJ9vffTlGPoRNBExveceKIgbmvwoPdsGxG0sZlSrsU43TGsGDVoPTG4HSgWaAW3vafTaPXz%2FU4vQad5dTl5elK5PFKjmMQ635NREhZfwdW6oyUw1%2BL5YqBr%2BknqLrPkjFjqKQTHW0bg%3D%3D"}
+[debug] [2022-08-25T06:30:53.608Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/fcc6c23b-aa37-45e9-aa5c-57604f902ae2.zip GoogleAccessId=service-151562966884%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1661410853&Signature=kszC3pj9mFlThbmVzzR8xAgltLrolk6RKGQC%2F30oE8EIc5P5BsB%2FdOwjSMae6JC2p%2Be5O301R8W%2FvprG4G1DR0BDgPCKfQAWPj66tH6y0YghjeGq1h2AtQ3QUdO1iUaTrgtZy6mHFcJhFVBlQfjagx%2BxDuCnv0Z0fCnA5iC3%2B1YlRFVfCl0j3OzDjWFGLXP8urNjbTEx1QxeJ9vffTlGPoRNBExveceKIgbmvwoPdsGxG0sZlSrsU43TGsGDVoPTG4HSgWaAW3vafTaPXz%2FU4vQad5dTl5elK5PFKjmMQ635NREhZfwdW6oyUw1%2BL5YqBr%2BknqLrPkjFjqKQTHW0bg%3D%3D
+[debug] [2022-08-25T06:30:53.608Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/fcc6c23b-aa37-45e9-aa5c-57604f902ae2.zip [stream]
+[debug] [2022-08-25T06:30:54.069Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/fcc6c23b-aa37-45e9-aa5c-57604f902ae2.zip 200
+[debug] [2022-08-25T06:30:54.070Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-106147981369.us-central1.cloudfunctions.appspot.com/fcc6c23b-aa37-45e9-aa5c-57604f902ae2.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  hosting[javanovamain]: beginning deploy... 
+[info] i  hosting[javanovamain]: found 14 files in build 
+[debug] [2022-08-25T06:30:54.078Z] [hosting] uploading with 200 concurrency
