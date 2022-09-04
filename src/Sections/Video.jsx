@@ -5,6 +5,9 @@ import StyledButton from '../Components/StyledButton';
 
 const VideoContainer = styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 const StyledVideo = styled.video`
     filter: saturate(1.1) contrast(0.7) opacity(0.9) brightness(0.9);
@@ -15,10 +18,17 @@ const StyledVideo = styled.video`
     z-index: 0;
 `;
 
-const CoffeeRedesigned = styled.div`
+const ContentContainer = styled.div`
     position: absolute;
-    top: 50px;
-    left: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const CoffeeRedesigned = styled.div`
     width: 100%;
     height: 50px;
     text-align: center;
@@ -30,33 +40,29 @@ const CoffeeRedesigned = styled.div`
     font-size: 120px;
     font-weight: bold;
     line-height: 120px;
-    margin-top: 24px;
     margin-bottom: 24px;
 
     @media (max-width: 600px) {
-        top: 30px;
-        margin-top: 0px;
+        margin-bottom: 0px;
+
         font-size: 50px;
         line-height: 30px;
     }
 `;
 const TheBestCoffee = styled(CoffeeRedesigned)`
-    top: 140px;
     font-size: 40px;
 
     @media (max-width: 600px) {
-        top: 70px;
         font-size: 30px;
     }
 `;
 
 const HowItWorks = styled(CoffeeRedesigned)`
     height: 50px;
-    top: 200px;
 
     @media (max-width: 600px) {
+        margin-top: 30px;
         height: 50px;
-        top: 130px;
     }
 `;
 
@@ -64,17 +70,19 @@ function Video(props) {
     const { scrollToHowItWorks } = props;
     return (
         <VideoContainer>
-            <CoffeeRedesigned>Coffee Redesigned.</CoffeeRedesigned>
-            <TheBestCoffee>The Best Coffee You've Never Had.</TheBestCoffee>
-            <HowItWorks>
-                <StyledButton
-                    type="button"
-                    onClick={scrollToHowItWorks}
-                    buttonText="Learn More"
-                    iconName="arrow right"
-                    color="black"
-                />
-            </HowItWorks>
+            <ContentContainer>
+                <CoffeeRedesigned>Coffee Redesigned.</CoffeeRedesigned>
+                <TheBestCoffee>The Best Coffee You've Never Had.</TheBestCoffee>
+                <HowItWorks>
+                    <StyledButton
+                        type="button"
+                        onClick={scrollToHowItWorks}
+                        buttonText="Learn More"
+                        iconName="arrow right"
+                        color="black"
+                    />
+                </HowItWorks>
+            </ContentContainer>
             <StyledVideo
                 playsInline
                 autoPlay
