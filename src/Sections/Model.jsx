@@ -50,6 +50,14 @@ const AffirmationContainer = styled.div`
     color: white;
     font-size: 80px;
     font-weight: bold;
+
+    @media (max-width: 900px) {
+        font-size: 60px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 80px;
+    }
 `;
 
 function Model() {

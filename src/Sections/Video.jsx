@@ -17,7 +17,7 @@ const StyledVideo = styled.video`
 
 const CoffeeRedesigned = styled.div`
     position: absolute;
-    top: 20%;
+    top: 50px;
     left: 0;
     width: 100%;
     height: 50px;
@@ -34,26 +34,29 @@ const CoffeeRedesigned = styled.div`
     margin-bottom: 24px;
 
     @media (max-width: 600px) {
-        font-size: 60px;
+        top: 30px;
+        margin-top: 0px;
+        font-size: 50px;
+        line-height: 30px;
     }
 `;
 const TheBestCoffee = styled(CoffeeRedesigned)`
-    top: 200px;
+    top: 140px;
     font-size: 40px;
 
     @media (max-width: 600px) {
-        top: 100px;
+        top: 70px;
         font-size: 30px;
     }
 `;
 
 const HowItWorks = styled(CoffeeRedesigned)`
     height: 50px;
-    top: 240px;
+    top: 200px;
 
     @media (max-width: 600px) {
         height: 50px;
-        top: 150px;
+        top: 130px;
     }
 `;
 

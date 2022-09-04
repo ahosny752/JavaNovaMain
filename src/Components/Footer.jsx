@@ -25,7 +25,9 @@ const Content = styled.div`
 const MenuLinks = styled.div`
     border: 1px solid red;
     height: 100px;
-    width: 600px;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
 `;
 
 function Footer() {

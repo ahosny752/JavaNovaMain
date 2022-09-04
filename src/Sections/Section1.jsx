@@ -7,21 +7,22 @@ const Container = styled.div`
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
-    /* background-color: #e6d2aa; */
 `;
 
 const ContentBlock = styled.div`
-    /* border: 1px solid red; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 `;
 const TextOverlay = styled.div`
+    width: 200px;
     color: black;
     font-size: 80px;
     line-height: 100px;
+
     @media (max-width: 600px) {
+        width: 100%;
         font-size: 40px;
         line-height: 50px;
     }
