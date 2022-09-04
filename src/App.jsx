@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar';
 import CartModal from './Components/CartModal';
 import AboutUs from './Pages/AboutUs';
 import Recipes from './Pages/Recipes';
-import Footer from './Components/Footer';
+import MailingList from './Components/MailingList';
 
 function App() {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -34,7 +34,7 @@ function App() {
                         <Route path="/recipes" element={<Recipes setIsBottom={setIsBottom} />} />
                     </Routes>
                 </div>
-                {scrollIsAtBottom && <Footer />}
+                {scrollIsAtBottom && <MailingList />}
             </BrowserRouter>
         </div>
     );

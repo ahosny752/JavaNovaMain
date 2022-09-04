@@ -27,17 +27,34 @@ const CoffeeRedesigned = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 5vw;
+    font-size: 120px;
     font-weight: bold;
+    line-height: 120px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @media (max-width: 600px) {
+        font-size: 60px;
+    }
 `;
 const TheBestCoffee = styled(CoffeeRedesigned)`
-    top: 32%;
-    font-size: 3vw;
+    top: 200px;
+    font-size: 40px;
+
+    @media (max-width: 600px) {
+        top: 100px;
+        font-size: 30px;
+    }
 `;
 
 const HowItWorks = styled(CoffeeRedesigned)`
     height: 50px;
-    top: 45%;
+    top: 240px;
+
+    @media (max-width: 600px) {
+        height: 50px;
+        top: 150px;
+    }
 `;
 
 function Video(props) {

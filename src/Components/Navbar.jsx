@@ -130,32 +130,39 @@ function Navbar(props) {
         width: '30px',
     };
 
+    const showNavItems = false;
     return (
         <NavbarContainer>
             <NavBox style={{ justifyContent: justifyNavBox }}>
-                {collapseMenu ? (
-                    <Hamburger>
-                        <HamburgerItem onClick={() => setModalOpen(true)}>
-                            <GiHamburgerMenu style={iconStyle} />
-                        </HamburgerItem>
-                    </Hamburger>
-                ) : (
-                    <MenuItems>
-                        <MenuItem>
-                            <StyledLink to="/aboutUs">About Us</StyledLink>
-                        </MenuItem>
-                        <MenuItem>
-                            <StyledLink to="/recipes">Recipes</StyledLink>
-                        </MenuItem>
-                    </MenuItems>
-                )}
-
+                <div style={{ visibility: showNavItems ? 'visible' : 'hidden' }}>
+                    {collapseMenu ? (
+                        <Hamburger>
+                            <HamburgerItem onClick={() => setModalOpen(true)}>
+                                <GiHamburgerMenu style={iconStyle} />
+                            </HamburgerItem>
+                        </Hamburger>
+                    ) : (
+                        <MenuItems>
+                            <MenuItem>
+                                <StyledLink to="/aboutUs">About Us</StyledLink>
+                            </MenuItem>
+                            <MenuItem>
+                                <StyledLink to="/recipes">Recipes</StyledLink>
+                            </MenuItem>
+                        </MenuItems>
+                    )}
+                </div>
                 <Logo style={{ width: collapseMenuWith }}>
                     <StyledLink to="/">
                         <LogoItem src={JavaNovaLogo} />
                     </StyledLink>
                 </Logo>
-                <Cart style={{ width: collapseMenuWith }}>
+                <Cart
+                    style={{
+                        width: collapseMenuWith,
+                        visibility: showNavItems ? 'visible' : 'hidden',
+                    }}
+                >
                     <CartItem onClick={() => setShowSidebar(true)}>
                         <RiShoppingCartLine style={iconStyle} />
                     </CartItem>

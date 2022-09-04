@@ -45,7 +45,7 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 5px;
     @media (max-width: 600px) {
         width: 400px;
 
@@ -62,11 +62,11 @@ const BoxTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: bold;
 `;
 
 const BoxImg = styled.img`
-    /* border: 1px solid purple; */
     width: 20vw;
     height: 18vw;
     object-fit: contain;
@@ -86,25 +86,25 @@ function HowItWorks() {
             <Title>How It Works</Title>
 
             <StepsContainer>
-                <Box style={{ backgroundColor: '#E6D2AA' }}>
+                <Box style={{ backgroundColor: 'white' }}>
                     <BoxTitle style={{ textDecoration: 'underline' }}>Step 1</BoxTitle>
                     <BoxTitle>Add Your Ice</BoxTitle>
 
                     <BoxImg src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/add%20ice%20gif.gif?alt=media&token=08b7b67b-aefb-439a-b181-5045f8ba00b0" />
                 </Box>
-                <Box style={{ backgroundColor: '#E6D2AA' }}>
+                <Box style={{ backgroundColor: 'white' }}>
                     <BoxTitle style={{ textDecoration: 'underline' }}>Step 2</BoxTitle>
                     <BoxTitle>Add Your Milk</BoxTitle>
 
                     <BoxImg src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/add%20milk%20gif.gif?alt=media&token=fcdf1912-f350-49ba-b50d-17594091b07a" />
                 </Box>
-                <Box style={{ backgroundColor: '#E6D2AA' }}>
+                <Box style={{ backgroundColor: 'white' }}>
                     <BoxTitle style={{ textDecoration: 'underline' }}>Step 3</BoxTitle>
                     <BoxTitle>Dispense Java Nova</BoxTitle>
 
                     <BoxImg src="https://firebasestorage.googleapis.com/v0/b/javanovamain.appspot.com/o/dispense%20gif.gif?alt=media&token=61efe900-ef18-4578-8102-5174b7caed17" />
                 </Box>
-                <Box style={{ backgroundColor: '#E6D2AA' }}>
+                <Box style={{ backgroundColor: 'white' }}>
                     <BoxTitle style={{ textDecoration: 'underline' }}>Step 4</BoxTitle>
                     <BoxTitle>Stir and Enjoy</BoxTitle>
 
